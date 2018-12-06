@@ -17,11 +17,15 @@ Create Best Bot With TGX Library
 <bold> You can open Link and Extract Data 👇 </bold>
 <pre>$MonsterX->GetLink($url);</pre>
 
-<bold> Set Data for send to api telegram (for example fileid, text and more)
+<bold>You need Set Data for send to api telegram (for example fileid, text and more)
 
 
 <pre>$MonsterX->SetData("Hello World");</pre>
 
 <bold>You Can Set Caption for Files 👇</bold>
 <pre>$MonsterX->SetCaption("This File Only For You❤");</pre>
+
+<bold>You need Set Chat ID for send for users 👇 </bold>
+<pre>$MonsterX->SetChatID(128192991);</pre>
+
 </html>
