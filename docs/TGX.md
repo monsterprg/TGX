@@ -40,5 +40,9 @@ Create Best Bot With TGX Library
 <bold> You can Reply to Message with message id 👇 </bold>
 <pre>$MonsterX->ReplyToMessage(1826);</pre>
 
+<bold> If you do not like to open the links in your message before send, use this 👇 </bold>
+<pre>$MonsterX->DisableWebPagePreview(true);</pre>
+
+
 
 </html>
