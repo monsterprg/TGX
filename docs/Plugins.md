@@ -20,7 +20,7 @@ you can add plugin in folder config/plugins
 <b> Direct connection to GitHab 👇 </b>
 <pre>$MonsterP->github($username, $repository, $plugin);</pre>
 <h5> What is $plugin ? </h5
-<h6> main file this plugin! </h6
+<h6> main file this plugin! </h6>
 <h5> Example : </h5>
 <pre>$MonsterP->github("KyleAMathews","phpmailer","class.phpmailer.php");</pre>
 <h6> for install and include phpmailer </h6>
