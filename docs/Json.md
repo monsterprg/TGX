@@ -26,3 +26,15 @@ You can work with json for save data
 
 <bold> Get all user data </bold>
 <pre>$MonsterJ->GetUser();</pre>
+
+<bold> Get value of key </bold>
+<pre>$MonsterJ->GetKey($keyname)</pre>
+
+<bold> Add key for set value </bold>
+<pre>$MonsterJ->AddKey("coin");</pre>
+
+<bold> Put value in key </bold>
+<pre>$MonsterJ->PutKey($key, $value);</pre>
+
+<bold> Delete key (all keys ChatID, delete) </bold>
+<pre>$MonsterJ->DelKey($key);</pre>
