@@ -7,7 +7,7 @@ you can add plugin in folder config/plugins
 <b> Start Work 🔘 </b>
 <pre>$MonsterP = new TGX_plugins(array filenames = []);</pre>
 <h6> Examples : </h6>
-<pre>$MonsterP = new TGX_plugins(['functions.php','config.php']);
+<pre>$MonsterP = new TGX_plugins(['functions.php','config.php']);</pre>
 
 <b> Load Folder plugin 👇 </b>
 <pre>$MonsterP->PluginLoad($folder, $file);</pre>
