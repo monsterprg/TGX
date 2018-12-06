@@ -5,7 +5,7 @@ Create Best Bot With TGX Library
 
 
 
-<bold>Connect Bot : </bold>
+<bold>Connect Bot 🔘</bold>
 <pre>$MonsterX = new TGX("123456:abcdefg1936191719"); </pre>
 
 <bold> You Can set proxy for connect to api Telegram👇</bold>
@@ -20,7 +20,7 @@ Create Best Bot With TGX Library
 <bold>You need Set Data for send to api telegram (for example fileid, text and more)
 
 
-<pre>$MonsterX->SetData("Hello World");</pre>
+<pre>$MonsterX->SetData("Hello World😍👌");</pre>
 
 <bold>You Can Set Caption for Files 👇</bold>
 <pre>$MonsterX->SetCaption("This File Only For You❤");</pre>
