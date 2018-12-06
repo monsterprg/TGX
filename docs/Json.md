@@ -3,38 +3,38 @@
 
 You can work with json for save data
 
-<bold> Start Work 🔘 </bold>
+<b> Start Work 🔘 </b>
 <pre>$MonsterJ = new TGX_JsonData();</pre>
 
-<bold> Set Chat ID for work user data</bold>
+<b> Set Chat ID for work user data</b>
 <pre>$MonsterJ->SetChatID();</pre>
 
-<bold> Set NameFile for save data </bold>
+<b> Set NameFile for save data </b>
 <pre>$MonsterJ->SetNameFile("users.json");</pre>
 
-<bold> Create File (need to set namefile with SetNameFile("NameFile.json") </bold>
+<b> Create File (need to set namefile with SetNameFile("NameFile.json") </b>
 <pre>$MonsterJ->Create();</pre>
 
-<bold> add User for save data </bold>
+<b> add User for save data </b>
 <pre>$MonsterJ->AddUser();</pre>
 
-<bold> Check Exists User </bold>
+<b> Check Exists User </b>
 <pre>$MonsterJ->ExistsUser();</pre>
 
-<bold> Delete User (All data delete) </bold>
+<b> Delete User (All data delete) </b>
 <pre>$MonsterJ->DeleteUser();</pre>
 
-<bold> Get all user data </bold>
+<b> Get all user data </b>
 <pre>$MonsterJ->GetUser();</pre>
 
-<bold> Get value of key </bold>
+<b> Get value of key </b>
 <pre>$MonsterJ->GetKey($keyname)</pre>
 
-<bold> Add key for set value </bold>
+<b> Add key for set value </b>
 <pre>$MonsterJ->AddKey("coin");</pre>
 
-<bold> Put value in key </bold>
+<b> Put value in key </b>
 <pre>$MonsterJ->PutKey($key, $value);</pre>
 
-<bold> Delete key (all keys ChatID, delete) </bold>
+<b> Delete key (all keys ChatID, delete) </b>
 <pre>$MonsterJ->DelKey($key);</pre>
