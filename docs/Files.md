@@ -2,26 +2,26 @@
 
 You can use class for work with files
 
-<bold> Start Work 🔘 </bold>
+<b> Start Work 🔘 </b>
 <pre>$MonsterF = new TGX_Files();</pre>
 
-<bold> if you need create file use this 👇 </bold>
+<b> if you need create file use this 👇 </b>
 <pre>$MonsterF->CreateFile($namefile,$value = null);</pre>
 
-<bold> Write in file (Deleted previous text) </bold>
+<b> Write in file (Deleted previous text) </b>
 <pre>$MonsterF->PutFile("Hello World 👌");</pre>
 
-<bold> Delete File </bold>
+<b> Delete File </b>
 <pre>$MonsterF->UnFile($namefile);</pre>
 
-<bold> Read File </bold>
+<b> Read File </b>
 <pre>$MonsterF->ReadFile($namefile);</pre>
 
-<bold> Create Folder </bold>
+<b> Create Folder </b>
 <pre>$MonsterF->CreateFolder($name);</pre>
 
-<bold> Check Exists File </bold>
+<b> Check Exists File </b>
 <pre>$MonsterF->FileExists($namefile);</pre>
 
-<bold> Check Exists Folder </bold>
+<b> Check Exists Folder </b>
 <pre>$MonsterF->FolderExists($namefolder);</pre>
