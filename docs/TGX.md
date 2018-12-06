@@ -3,7 +3,7 @@ Create Best Bot With TGX Library
 
 <html>
 
-<italic> TGX (name class) : </italic>
+
 
 <bold>Connect Bot : </bold>
 <pre>$MonsterX = new TGX("123456:abcdefg1936191719"); </pre>
@@ -17,4 +17,8 @@ Create Best Bot With TGX Library
 <bold> You can open Link and Extract Data 👇 </bold>
 <pre>$MonsterX->GetLink($url);</pre>
 
+<bold> Set Data for send to api telegram (for example fileid, text and more)
+
+
+<pre>$MonsterX->SetData("Hello World");</pre>
 </html>
