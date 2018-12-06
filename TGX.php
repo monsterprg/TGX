@@ -257,17 +257,17 @@ class TGX_Files {
     public function UnFile($name) {
         return unlink($name);
     }
-    public function GetFile($name) {
+    public function ReadFile($name) {
         return file_get_contents($name);
     }
   public function CreateFolder($name) {
         return mkdir($name);
     }
-  public function DeleteFolder($name) {
-        return mkdir($name);
-    }
   public function FileExists($name) {
         return !file_exists($name);
+    }
+  public function FolderExists($name) {
+        return !is_dir($name);
     }
 }
 
