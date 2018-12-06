@@ -50,6 +50,10 @@ $MonsterX->EditMessage($inline=false);
 $MonsterX->SendDocument();
 $MonsterX->SendSticker();
 $MonsterX->SendVideo($width = null, $height = null);
+$MonsterX->SendVoice();
+$MonsterX->SendContact($first_name, $last_name = null); (SetData = phone_number)
+$MonsterX->IsJoinUser($channel);
+
 </pre>
 
 
