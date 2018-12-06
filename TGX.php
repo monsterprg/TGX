@@ -16,7 +16,7 @@ function CreateLogMonster($text) {
 class TGX{
   
   
-  public function __construct($token,$plugin = false) {
+  public function __construct($token) {
         $this->token = $token;
         if (!is_dir("config")) {
             mkdir("config");
@@ -28,7 +28,7 @@ class TGX{
  }
  
   
-    public function Proxy_Install($url, $port = 80, $username = null, $password = null, $type = 'HTTP') {
+    public function Proxy($url, $port = 80, $username = null, $password = null, $type = 'HTTP') {
         $this->Proxy = $url;
         $this->Proxy_Port = $port;
     if($username != null){
@@ -90,17 +90,16 @@ CreateLogMonster("Error API Telegram : ".$decode['description']);
         $header['errno'] = $err;
         $header['errmsg'] = $errmsg;
         $header['content'] = $content;
-        file_put_contents("config/curl.json", json_encode($header));
         return $content;
     }
   
   public function SetData($data){
   $this->Data = $data;  
   }
-  public function SetCaption($caption){
+  public function SetCaption($caption=null){
   $this->Caption = $caption;  
   }
-  public function SetChatID($chat_id=null){
+  public function SetChatID($chat_id){
   $this->ChatID = $chat_id;
   }
 
