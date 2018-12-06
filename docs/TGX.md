@@ -31,6 +31,7 @@ Create Best Bot With TGX Library
 <bold> You can set MessageID for editmessage and more...👇 </bold>
 <pre>$MonsterX->SetMessageID(1828181);</pre>
 
-
+<bold> You can set ParseMode for SetData(text) 👇 </bold>
+<pre>$MonsterX->ParseMode("markdown");</pre>
 
 </html>
