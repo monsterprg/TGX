@@ -28,4 +28,9 @@ Create Best Bot With TGX Library
 <bold>You need Set Chat ID for send for users 👇 </bold>
 <pre>$MonsterX->SetChatID(128192991);</pre>
 
+<bold> You can set MessageID for editmessage and more... </bold>
+<pre>$MonsterX->SetMessageID(1828181);</pre>
+
+
+
 </html>
