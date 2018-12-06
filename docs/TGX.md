@@ -5,45 +5,45 @@ Create Best Bot With TGX Library
 
 
 
-<bold>Connect Bot 🔘</bold>
+<b>Connect Bot 🔘</b>
 <pre>$MonsterX = new TGX("123456:abcdefg1936191719"); </pre>
 
-<bold> You Can set proxy for connect to api Telegram👇</bold>
+<b> You Can set proxy for connect to api Telegram👇</b>
 <pre>$MonsterX->Proxy($url, $port = 80, $username = null, $password = null, $type = 'HTTP');</pre>
 
-<bold> You can connect api telegram 👇 </bold>
+<b> You can connect api telegram 👇 </b>
 <pre>$Monsterx->api($method, $datas = []);</pre>
 
-<bold> You can open Link and Extract Data 👇 </bold>
+<b> You can open Link and Extract Data 👇 </b>
 <pre>$MonsterX->GetLink($url);</pre>
 
-<bold>You need Set Data for send to api telegram (for example fileid, text and more)
+<b>You need Set Data for send to api telegram (for example fileid, text and more)</b>
 
 
 <pre>$MonsterX->SetData("Hello World😍👌");</pre>
 
-<bold>You Can Set Caption for Files 👇</bold>
+<b>You Can Set Caption for Files 👇</b>
 <pre>$MonsterX->SetCaption("This File Only For You❤");</pre>
 
-<bold>You need Set Chat ID for send for users 👇 </bold>
+<b>You need Set Chat ID for send for users 👇 </b>
 <pre>$MonsterX->SetChatID(128192991);</pre>
 
-<bold> You can set MessageID for editmessage and more...👇 </bold>
+<b> You can set MessageID for editmessage and more...👇 </b>
 <pre>$MonsterX->SetMessageID(1828181);</pre>
 
-<bold> You can set ParseMode for SetData(text) 👇 </bold>
+<b> You can set ParseMode for SetData(text) 👇 </b>
 <pre>$MonsterX->ParseMode("markdown");</pre>
 
-<bold> You can set Duration of video/music and more...👇</bold>
+<b> You can set Duration of video/music and more...👇</b>
 <pre>$MonsterX->Duration(20);</pre>
 
-<bold> You can Reply to Message with message id 👇 </bold>
+<b> You can Reply to Message with message id 👇 </b>
 <pre>$MonsterX->ReplyToMessage(1826);</pre>
 
-<bold> If you do not like to open the links in your message before send, use this 👇 </bold>
+<b> If you do not like to open the links in your message before send, use this 👇 </b>
 <pre>$MonsterX->DisableWebPagePreview(true);</pre>
 
-<bold> After settings,you can use this for send data to telegram<bold>
+<b> After settings,you can use this for send data to telegram<b>
 <pre>
 $MonsterX->SendMessage();
 $MonsterX->EditMessage($inline=false);
