@@ -7,5 +7,7 @@ You can work with json for save data
 <pre>$MonsterJ = new TGX_JsonData();</pre>
 
 <bold> Set Chat ID for work user data</bold>
-</pre>$MonsterJ->SetChatID();</pre>
+<pre>$MonsterJ->SetChatID();</pre>
 
+<bold> Set Name for save data </bold>
+<pre>$MonsterJ->SetNameFile("users.json");</pre>
