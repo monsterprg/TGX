@@ -9,7 +9,7 @@ PHP Version :  <b>PHP 7.2</b>
 
 allow_url_fopen : <b>On</b>
 
-memory_limit : <b>128MB</b> Recommended <b>512MB</b>
+memory_limit : <b>128MB</b> Recommended <b>256MB</b>
 
 post_max_size : <b> 64MB </b> Recommended <b>128MB</b>
 
