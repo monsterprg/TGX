@@ -2,7 +2,7 @@
 Create Best Bot With TGX Library
 
 
-                            TGX (name class)
+<italic> TGX (name class) : </italic>
 
 <bold>Connect Bot : </bold>
 
