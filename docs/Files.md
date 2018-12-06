@@ -14,7 +14,7 @@ You can use class for work with files
 <bold> Delete File </bold>
 <pre>$MonsterF->UnFile($namefile);</pre>
 
-<bold> read File </bold>
+<bold> Read File </bold>
 <pre>$MonsterF->ReadFile($namefile);</pre>
 
 <bold> Create Folder </bold>
