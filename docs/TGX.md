@@ -43,6 +43,14 @@ Create Best Bot With TGX Library
 <bold> If you do not like to open the links in your message before send, use this 👇 </bold>
 <pre>$MonsterX->DisableWebPagePreview(true);</pre>
 
+<bold> After settings,you can use this for send data to telegram<bold>
+<pre>
+$MonsterX->SendMessage();
+$MonsterX->EditMessage($inline=false);
+$MonsterX->SendDocument();
+$MonsterX->SendSticker();
+$MonsterX->SendVideo($width = null, $height = null);
+</pre>
 
 
 </html>
