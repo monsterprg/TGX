@@ -37,5 +37,8 @@ Create Best Bot With TGX Library
 <bold> You can set Duration of video/music and more...👇</bold>
 <pre>$MonsterX->Duration(20);</pre>
 
+<bold> You can Reply to Message with message id 👇 </bold>
+<pre>$MonsterX->ReplyToMessage(1826);</pre>
+
 
 </html>
