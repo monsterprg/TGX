@@ -24,7 +24,7 @@ and include for use
 
 <pre>
 
-include "tgx.php";
+include "TGX.php";
 
 //Your Source Code
 </pre>
