@@ -22,7 +22,7 @@ Library need : <b>json</b> , <b>mysqli</b> , <b>zip</b>
 Just copy the TGX.php file to your web host
 and include for use 
 
-<pre><?php
+<pre>
 
 include "tgx.php";
 
