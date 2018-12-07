@@ -73,3 +73,4 @@ $MonsterM->CreateTable();
 $MonsterM->AddColumm('chat_id', 'INT');
 $MonsterM->AddColumm('name', 'TEXT');
 </pre>
+<a href="https://www.w3schools.com/sql/sql_datatypes.asp">definition list</a>
