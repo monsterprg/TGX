@@ -104,3 +104,4 @@ if(!$mysql->is_column_value('chat_id',$chat_id)){
 $mysql->AddProfile($chat_id);
 $mysql->Put("coin",100,"chat_id", $chat_id);
 }
+</pre>
