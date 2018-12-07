@@ -66,3 +66,10 @@ $MonsterM->CreateTable();
 <b>Deleting profile (all data profile delete)</b>
 <pre>$MonsterM->DelCustomProfile('chat_id', 123456789);</pre>
 
+<b>Add column</b>
+<pre>$MonsterM->AddColumn($columm, $definition);</pre>
+<b>For Example :</b>
+<pre>
+$MonsterM->AddColumm('chat_id', 'INT');
+$MonsterM->AddColumm('name', 'TEXT');
+</pre>
