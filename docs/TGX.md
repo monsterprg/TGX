@@ -40,6 +40,18 @@ Create Best Bot With TGX Library
 <b> You can Reply to Message with message id 👇 </b>
 <pre>$MonsterX->ReplyToMessage(1826);</pre>
 
+<b> You can add keyboard for send (ReplyMarkup) 👇 </b>
+<pre>$MonsterX->ReplyMarkup(['keyboard'=>[
+                [
+                ['text'=>'1'],['text'=>'2']
+                ],
+                [
+                ['text'=>'3'],['text'=>'4']
+                ],
+
+              ]]);
+</pre>
+
 <b> If you do not like to open the links in your message before send, use this 👇 </b>
 <pre>$MonsterX->DisableWebPagePreview(true);</pre>
 
