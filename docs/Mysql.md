@@ -54,8 +54,8 @@ $MonsterM->CreateTable();
 
 <b>Get value of column</b>
 <pre>$MonsterM->Get($key, $key2, $value2);</pre>
-<b>For Example :</b>
-<pre>$MonsterM->Get("coins", "chat_id", 123456789);</pre> (123456789 = chat_id)
+<b>For Example :</b> (123456789 = chat_id)
+<pre>$MonsterM->Get("coins", "chat_id", 123456789);</pre>
 
 <b>Put Column value</b>
 <pre>$MonsterM->Put("coins", 10000, "chat_id", 123456789);</pre>
