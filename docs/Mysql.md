@@ -33,7 +33,7 @@ On the next page, you'll assign privileges for the user to the database. Check t
 <pre>$MonsterM = new TGX_Mysql('monsters.ir','monsters_test','123456789');</pre>
 
 <b>Set Table For Work</b>
-<pre>$MonsterM->SetTable("table_name");
+<pre>$MonsterM->SetTable("table_name");</pre>
 
 <b>Create Table</b>
 <pre>$MonsterM->CreateTable();</pre>
