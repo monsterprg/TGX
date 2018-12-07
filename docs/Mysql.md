@@ -52,4 +52,11 @@ $MonsterM->CreateTable();
 <b>Get all Column Value</b>
 <pre>$MonsterM->IDS();</pre>
 
-<b>
+<b>Get value of column</b>
+<pre>$MonsterM->Get($key, $key2, $value2);</pre>
+<b>For Example :</b>
+<pre>$MonsterM->Get("coins", "chat_id", 123456789);</pre> (123456789 = chat_id)
+
+<b>Put value 
+$MonsterM->Put($key, $value, $key2, $value2);
+
