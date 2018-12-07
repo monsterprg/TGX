@@ -74,3 +74,12 @@ $MonsterM->AddColumm('chat_id', 'INT');
 $MonsterM->AddColumm('name', 'TEXT');
 </pre>
 <a href="https://www.w3schools.com/sql/sql_datatypes.asp">definition list</a>
+
+<b>Add new value at the beginning of the table (Similar AddCustomProfile)<b>
+<pre>$MonsterM->PutNoWhere("chat_id", 123456789);</pre>
+  
+<b>Sum the values of a column</b>
+</pre>$MonsterM->SUM($column);</pre>
+
+<b>Get Count of a column</b>
+</pre>$MonsterM->COUNT($column);
