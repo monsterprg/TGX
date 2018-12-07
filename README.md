@@ -1,4 +1,4 @@
-# TGX-Free
+# TGX (Free)
 Create Best Bot With TGX Library
 
 Version : 1.2X
