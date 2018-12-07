@@ -79,7 +79,7 @@ $MonsterM->AddColumm('name', 'TEXT');
 <pre>$MonsterM->PutNoWhere("chat_id", 123456789);</pre>
   
 <b>Sum the values of a column</b>
-</pre>$MonsterM->SUM($column);</pre>
+<pre>$MonsterM->SUM($column);</pre>
 
 <b>Get Count of a column</b>
 </pre>$MonsterM->COUNT($column);
