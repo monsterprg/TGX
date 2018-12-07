@@ -32,3 +32,19 @@ On the next page, you'll assign privileges for the user to the database. Check t
 <b>For Example: </b>
 <pre>$MonsterM = new TGX_Mysql('monsters.ir','monsters_test','123456789');</pre>
 
+<b>Set Table For Work</b>
+<pre>$MonsterM->SetTable("table_name");
+
+<b>Create Table</b>
+<pre>$MonsterM->CreateTable();</pre>
+
+<b>Check Exist Table</b>
+<pre>$MonsterM->TableExists();</pre>
+
+<b> For Example : (Create Table)</b>
+<pre>
+$MonsterM->SetTable("users");
+if(!$MonsterM->TableExists()){
+$MonsterM->CreateTable();
+}
+</pre>
