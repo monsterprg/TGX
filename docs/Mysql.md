@@ -57,6 +57,6 @@ $MonsterM->CreateTable();
 <b>For Example :</b>
 <pre>$MonsterM->Get("coins", "chat_id", 123456789);</pre> (123456789 = chat_id)
 
-<b>Put value 
-$MonsterM->Put($key, $value, $key2, $value2);
+<b>Put Column value</b>
+<pre>$MonsterM->Put("coins", 10000, "chat_id", 123456789);</pre>
 
