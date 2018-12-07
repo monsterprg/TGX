@@ -13,7 +13,7 @@ Next to New Database enter a name for your database and click Next Step.
 
 </h6>
 
-<mark>WARNING: If you receive an error message regarding the limited number of databases available, you may consider upgrading your Business Class Hosting plan.</mark>
+<b>WARNING: If you receive an error message regarding the limited number of databases available, you may consider upgrading your Business Class Hosting plan.</b>
 
 <h6>
 Next to <sup>Username</sup> enter a username.
@@ -26,4 +26,8 @@ On the next page, you'll assign privileges for the user to the database. Check t
 </h6>
 
 
-<b>connect to database</b>
+<b>connect to database 🔘</b>
+<pre>$MonsterM = new TGX_Mysql($host,$username,$password);</pre>
+<b>For Example: </b>
+<pre>$MonsterM = new TGX_Mysql('monsters.ir','monsters_test','123456789');</pre>
+
