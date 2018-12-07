@@ -25,6 +25,7 @@ enter it again for <sup>Password</sup> (Again) and then click <sup>Create User</
 On the next page, you'll assign privileges for the user to the database. Check the box next to <sup>All Privileges</sup> and then click <sup>Next Step</sup>
 </h6>
 
+<img src="http://uupload.ir/files/m2pw_img_20181207_095453.jpg" alt="MySql"/> 
 
 <b>connect to database 🔘</b>
 <pre>$MonsterM = new TGX_Mysql($host,$username,$password);</pre>
