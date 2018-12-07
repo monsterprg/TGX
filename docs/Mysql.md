@@ -48,3 +48,8 @@ if(!$MonsterM->TableExists()){
 $MonsterM->CreateTable();
 }
 </pre>
+
+<b>Get all Column Value</b
+<pre>$MonsterM->IDS();</pre>
+
+<b>
