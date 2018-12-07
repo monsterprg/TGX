@@ -82,4 +82,7 @@ $MonsterM->AddColumm('name', 'TEXT');
 <pre>$MonsterM->SUM($column);</pre>
 
 <b>Get Count of a column</b>
-</pre>$MonsterM->COUNT($column);
+<pre>$MonsterM->COUNT($column);</pre>
+
+<b>Check if there is a value in the column</b>
+<pre>$MonsterM->is_column_value($column, $value);</pre>
