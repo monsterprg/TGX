@@ -49,7 +49,7 @@ $MonsterM->CreateTable();
 }
 </pre>
 
-<b>Get all Column Value</b
+<b>Get all Column Value</b>
 <pre>$MonsterM->IDS();</pre>
 
 <b>
