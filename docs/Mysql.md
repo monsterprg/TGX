@@ -60,3 +60,9 @@ $MonsterM->CreateTable();
 <b>Put Column value</b>
 <pre>$MonsterM->Put("coins", 10000, "chat_id", 123456789);</pre>
 
+<b>Adding profile to manage (for example: chat_id)</b>
+<pre>$MonsterM->AddCustomProfile('chat_id', 123456789);</pre>
+
+<b>Deleting profile (all data profile delete)</b>
+<pre>$MonsterM->DelCustomProfile('chat_id', 123456789);</pre>
+
