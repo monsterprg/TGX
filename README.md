@@ -16,3 +16,14 @@ post_max_size : <b> 64MB </b> Recommended <b>128MB</b>
 upload_max_filesize : <b>256MB</b> Recommended <b>1G</b>
 
 Library need : <b>json</b> , <b>mysqli</b> , <b>zip</b>
+
+# How To Install :
+
+Just copy the TGX.php file to your web host
+and include for use 
+
+<?php
+
+include "tgx.php";
+
+//Your Source Code
