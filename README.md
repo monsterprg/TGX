@@ -11,6 +11,7 @@ What's news ? 💥
 - Added new function to add from chat (SetFromChatID in TGX.md)
 - Added new function to forward message (ForwardMessage in TGX.md)
 - Added new class for encode/decode (AES.md)
+- Added new function for Sum a value with the previous value of the data (PutSum in Mysql.md)
 </b>
 
 
