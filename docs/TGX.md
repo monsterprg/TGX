@@ -77,6 +77,8 @@ $MonsterX->SendPhoto();
               ]]);
 </pre>
 
+
+
 <b> If you do not like to open the links in your message before send, use this 👇 </b>
 <pre>$MonsterX->DisableWebPagePreview(true);</pre>
 
@@ -93,5 +95,22 @@ $MonsterX->IsJoinUser($channel);
 
 </pre>
 
+<b>You can use this variable to get the message id from the last message send</b>
+<pre>
+$MonsterX->SetChatID($chat_id);
+$MonsterX->SetData(1);
+$MonsterX->SendMessage();
+$MID = $MonsterX->SendMessageMI;
+$MonsterX->SetMessageID($MID);
+$MonsterX->SetData(2);
+$MonsterX->EditMessage();
+$MonsterX->SetData(3);
+$MonsterX->EditMessage();
+$MonsterX->SetData(4);
+$MonsterX->EditMessage();
+$MonsterX->SetData(5);
+$MonsterX->EditMessage();
+}
+</pre>
 
 </html>
