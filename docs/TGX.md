@@ -22,6 +22,9 @@ Create Best Bot With TGX Library
 
 <pre>$MonsterX->SetData("Hello World😍👌");</pre>
 
+<b>You can set From id (chat) for forwardmessage and more...</b>
+<pre>$MonsterX->SetFromChatID($chat_id);</pre>
+
 <b>You Can Set Caption for Files 👇</b>
 <pre>$MonsterX->SetCaption("This File Only For You❤");</pre>
 
@@ -92,7 +95,7 @@ $MonsterX->SendVideo($width = null, $height = null);
 $MonsterX->SendVoice();
 $MonsterX->SendContact($first_name, $last_name = null); (SetData = phone_number)
 $MonsterX->IsJoinUser($channel);
-
+$MonsterX->ForwardMessage();
 </pre>
 
 <b>You can use this variable to get the message id from the last message send</b>
