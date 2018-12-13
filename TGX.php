@@ -1,5 +1,5 @@
 ﻿<?php
-//VERSION : 1.2X
+//VERSION : 1.3X
 //For Get New Updates Join us Channel
 //@TGX_TEAM and contact me ( @TGXSupport )
 //Developer @MonstersDev
@@ -9,6 +9,7 @@ function CreateLogMonster($text) {
     fclose($fopen);
 }
 class TGX {
+    public $SendMessageMI = "";
     public function __construct($token) {
         $this->token = $token;
         if (!is_dir("config")) {
@@ -75,11 +76,20 @@ class TGX {
         $header['content'] = $content;
         return $content;
     }
+    public function SetFromChatID($chat_id){
+        $this->SetFromChatID = $chat_id;    
+    }
     public function SetData($data) {
         $this->Data = $data;
     }
+    public function AddData($data) {
+        $this->Data .= $data;
+    }
     public function SetCaption($caption = null) {
         $this->Caption = $caption;
+    }
+    public function AddCaption($caption) {
+        $this->Caption .= $caption;
     }
     public function SetChatID($chat_id) {
         $this->ChatID = $chat_id;
@@ -122,7 +132,18 @@ class TGX {
         @$data['parse_mode'] = $this->ParseMode;
         @$data['reply_markup'] = $this->ReplyMarkup;
         @$data['reply_to_message_id'] = $this->ReplyToMessage;
-        return $this->api('SendMessage', $data);
+        $Send = $this->api('SendMessage', $data);
+        $SendMI = json_decode($Send);
+        $this->SendMessageMI = $SendMI->result->message_id;
+        return $Send;
+    }
+    public function ForwardMessage(){
+        $data = [];
+        @$data['from_chat_id'] = $this->SetFromChatID;
+        @$data['chat_id'] = $this->ChatID;
+        @$data['message_id'] = $this->MessageID;
+        @$data['disable_notification'] = $this->AutoNotification;
+        return $this->api('ForwardMessage', $data);
     }
     public function EditMessage($inline = false) {
         $data = [];
@@ -233,7 +254,7 @@ class TGX {
         }
     }
     class TGX_JsonData {
-        public function __construct($plugins = []) {
+        public function __construct() {
             if (!is_dir("config/Json")) {
                 mkdir("config/Json");
             }
@@ -381,7 +402,7 @@ Error : Download failed");
                     return false;
                 } else {
                     mysqli_set_charset($mysql, "utf8");
-                    return true;
+                    return $this->mysql;
                 }
             } else {
                 CreateLogMonster("
@@ -410,6 +431,21 @@ php.net/manual/en/mysqli.installation.php
 Function : " . __METHOD__ . "
 Error : " . $this->mysql->error);
                 return false;
+            }
+        }
+        public function TableExists() {
+            $table = $this->TableName;
+            if ($table == null) {
+                CreateLogMonster("Can t Find Table Name in DBTableExists");
+            }
+            $query = mysqli_query($this->mysql, 'SELECT * FROM `' . $this->mysql_user . '`.`' . $table . '`');
+            if (!$query) {
+                CreateLogMonster(" 
+Function : " . __METHOD__ . "
+Error : " . $this->mysql->error);
+                return false;
+            } else {
+                return true;
             }
         }
         public function IDS() {
@@ -463,20 +499,17 @@ Error : " . $this->mysql->error);
                 return false;
             }
         }
-        public function TableExists() {
-            $table = $this->TableName;
-            if ($table == null) {
-                CreateLogMonster("Can t Find Table Name in DBTableExists");
-            }
-            $query = mysqli_query($this->mysql, 'SELECT * FROM `' . $this->mysql_user . '`.`' . $table . '`');
-            if (!$query) {
-                CreateLogMonster(" 
+        public function PutSum($key,$value,$key2,$value2){
+        if(!is_numeric($value)){
+        CreateLogMonster(" 
 Function : " . __METHOD__ . "
-Error : " . $this->mysql->error);
-                return false;
-            } else {
-                return true;
-            }
+Error : virable value not integers");
+        return false;
+        }else{
+        $get = (int) $this->Get($key,$key2,$value2);
+        $get += (int) $value;
+        return (int) $this->Put($key,$get,$key2,$value2);
+        }
         }
         public function DelCustomProfile($row, $value) {
             $table = $this->TableName;
@@ -649,4 +682,24 @@ Error : " . $this->mysql->error);
             }
         }
     }
-    
+
+class TGX_AES {
+
+    public function __construct($key) {
+        $this->AES_PASS = $key;
+    }
+    public function Encode($data) {
+
+$encryption_key=base64_decode($this->AES_PASS);
+$iv=openssl_cipher_iv_length('aes-256-cbc');
+$encrypted=openssl_encrypt($data,'aes-256-cbc',$encryption_key,0,$iv);
+return base64_encode(quoted_printable_encode(convert_uuencode($encrypted.'::'.$iv)));
+    }
+    public function Decode($data) {
+$encryption_key=base64_decode($this->AES_PASS);
+
+list($encrypted_data,$iv)=explode('::',convert_uudecode(quoted_printable_decode(base64_decode($data))),2);
+
+return openssl_decrypt($encrypted_data,'aes-256-cbc',$encryption_key,0,$iv);
+    }
+}
