@@ -87,6 +87,14 @@ $MonsterM->AddColumm('name', 'TEXT');
 <b>Check if there is a value in the column</b>
 <pre>$MonsterM->is_column_value($column, $value);</pre>
 
+<b>Sum a value with the previous value of the data😅</b>
+<pre>
+//coin = 500
+$MonsterM->PutSum("coin",100,"chat_id",123456789);
+//now coin = 600
+</pre>
+
+
 <b>Automatically add a profile for manage</b>
 <pre>$MonsterM->AddProfile($value);</pre>
 <b> For Example : (Add chat id 123456789 and set coin) </b>
