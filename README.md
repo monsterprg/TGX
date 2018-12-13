@@ -1,6 +1,18 @@
 # TGX (Free)
 Create Best Bot With TGX Library
 
+Version : 1.3X
+What's news ? 💥
+<b>
+- Added new function to add data (AddData in TGX.md)
+- Added new function to add caption (AddCaption in TGX.md)
+- Added virable to get message id SendMessage ($MonsterX->SendMessageMI in TGX.md)
+- Added new function to add from chat (SetFromChatID in TGX.md)
+- Added new function to forward message (ForwardMessage in TGX.md)
+- Added new class for encode/decode (AES.md)
+</b>
+
+
 Version : 1.2X
 
 # Requirements :
