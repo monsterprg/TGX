@@ -40,6 +40,20 @@ Create Best Bot With TGX Library
 <b> You can Reply to Message with message id 👇 </b>
 <pre>$MonsterX->ReplyToMessage(1826);</pre>
 
+<b> You can add new ones to the previous data </b>
+<pre>
+$MonsterX->SetData("Hello ");
+
+$MonsterX->AddData("World!");
+
+$MonsterX->SendMessage();
+//Hello World!
+
+</pre>
+
+  
+
+
 <b> You can add keyboard for send (ReplyMarkup) 👇 </b>
 <pre>$MonsterX->ReplyMarkup(['keyboard'=>[
                 [
