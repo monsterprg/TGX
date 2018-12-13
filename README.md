@@ -2,6 +2,7 @@
 Create Best Bot With TGX Library
 
 Version : 1.3X
+
 What's news ? 💥
 <b>
 - Added new function to add data (AddData in TGX.md)
@@ -11,6 +12,7 @@ What's news ? 💥
 - Added new function to forward message (ForwardMessage in TGX.md)
 - Added new class for encode/decode (AES.md)
 </b>
+
 
 
 Version : 1.2X
