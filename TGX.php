@@ -1,5 +1,5 @@
 ﻿<?php
-//VERSION : 1.3X
+//VERSION : 1.4X
 //For Get New Updates Join us Channel
 //@TGX_TEAM and contact me ( @TGXSupport )
 //Developer @MonstersDev
@@ -18,6 +18,13 @@ class TGX {
         if (!is_dir("config/files")) {
             mkdir("config/files");
         }
+    }
+    public function info_bot(){
+        $user_bot = $this->api('getme',[]);
+        $user_bot = json_decode($user_bot,1);
+        define("USERBOT",$user_bot['result']['username']);
+        define("IDBOT",$user_bot['result']['id']);
+        define("NAMEBOT",$user_bot['result']['first_name']);
     }
     public function Proxy($url, $port = 80, $username = null, $password = null, $type = 'HTTP') {
         $this->Proxy = $url;
@@ -79,14 +86,23 @@ class TGX {
     public function SetFromChatID($chat_id){
         $this->SetFromChatID = $chat_id;    
     }
+    public function EmptyFromChatID(){
+        $this->SetFromChatID = "";    
+    }
     public function SetData($data) {
         $this->Data = $data;
+    }
+    public function EmptyData() {
+        $this->Data = "";
     }
     public function AddData($data) {
         $this->Data .= $data;
     }
     public function SetCaption($caption = null) {
         $this->Caption = $caption;
+    }
+    public function EmptyCaption() {
+        $this->Caption = "";
     }
     public function AddCaption($caption) {
         $this->Caption .= $caption;
@@ -102,6 +118,9 @@ class TGX {
             $this->ParseMode = $mode;
         }
     }
+    public function EmptyParseMode() {
+            $this->ParseMode = "";
+    }
     public function Duration($duration = null) {
         if ($duration != null) {
             $this->Duration = $duration;
@@ -116,11 +135,25 @@ class TGX {
             $this->ReplyMarkup = json_encode($keyboard);
         }
     }
+    public function EmptyReplyMarkup(){
+            $this->ReplyMarkup = "";
+    }
     public function ReplyToMessage($mid = null) {
         $this->ReplyToMessage = $mid;
     }
+    public function EmptyReplyToMessage() {
+        $this->ReplyToMessage = "";
+    }
     public function DisableWebPagePreview($bool = true) {
         $this->DisableWebPagePreview = $bool;
+    }
+    public function DeleteMessage() {
+            $data = [];
+        @$data['chat_id'] = $this->ChatID;
+        @$data['message_id'] = $this->MessageID;
+        $Send = $this->api('DeleteMessage', $data);
+        $SendMI = json_decode($Send);
+        return $Send;
     }
     public function SendMessage() {
         $data = [];
@@ -167,6 +200,15 @@ class TGX {
         @$data['reply_to_message_id'] = $this->ReplyToMessage;
         return $this->api('sendDocument', $data);
     }
+    public function SendPhoto() {
+        $data = [];
+        @$data['chat_id'] = $this->ChatID;
+        @$data['photo'] = $this->Data;
+        @$data['caption'] = $this->Caption;
+        @$data['reply_markup'] = $this->ReplyMarkup;
+        @$data['reply_to_message_id'] = $this->ReplyToMessage;
+        return $this->api('sendPhoto', $data);
+    }
     public function SendSticker() {
         $data = [];
         @$data['chat_id'] = $this->ChatID;
@@ -209,10 +251,10 @@ class TGX {
             @$data['user_id'] = $this->ChatID;
             @$data['chat_id'] = $channel;
             $api = json_decode($this->api('getChatMember', $data), 1);
-            if ($api['description'] == 'Bad Request: chat not found') {
+            if (@$api['description'] == 'Bad Request: chat not found') {
                 CreateLogMonster("Channel Not found! Are You Sure $channel exists?");
                 return "CNF1XR3";
-            } elseif ($api['description'] == 'Bad Request: CHAT_ADMIN_REQUIRED') {
+            } elseif (@$api['description'] == 'Bad Request: CHAT_ADMIN_REQUIRED') {
                 CreateLogMonster("The Bot is Not Admin in the channel");
                 return "BNA1XR3";
             } else {
@@ -223,6 +265,63 @@ class TGX {
                 }
             }
         }
+        public function StickerPack($sticker=[]){
+             $this->StickerPack = $sticker;
+        }
+        public function StickerPackFolder($folderp,$emoji=[]){
+             $data = [];
+             $sticker = new Imagick();
+             $folder = scandir($folderp);
+             unset($folder[0]); unset($folder[1]);
+             $count = 0;
+             foreach($folder as $file){
+             $file = "".$folderp."/".$file."";
+             $sticker->readImage($file);
+             $sticker->resizeImage(512,512,imagick::FILTER_LANCZOS,0.9);
+             $sticker->writeImage($file);
+                  $data[$file] = $emoji[$count];
+             $count += 1;
+             }
+             $this->StickerPack = $data;
+        }
+        public function StickerName($name){
+             $getuser = $this->api('getme',[]);
+             $getuser = json_decode($getuser,1); 
+             $getuser = str_replace("@","",$getuser['result']['username']);
+             $name .= "_by_".$getuser;
+             $this->StickerName = $name;
+             CreateLogMonster($getuser);
+        }
+        public function StickerTitle($name){
+             $this->StickerTitle = $name;
+        }
+        public function CreateSticker(){
+             $pack = $this->StickerPack;
+             $count = 0;
+             $result_list = [];
+             foreach($pack as $sticker=>$emoji){
+                 if($count == 0){
+                 $result_list[] = json_decode($this->api('createNewStickerSet',["user_id"=>$this->ChatID,
+"name"=>$this->StickerName,
+"title"=>$this->StickerTitle,
+"emojis"=>$emoji,
+"png_sticker"=>new CurlFile($sticker)]),1);
+                 }else{
+                 $result_list[] = json_decode($this->api('addStickerToSet',["user_id"=>$this->ChatID,
+"name"=>$this->StickerName,
+"emojis"=>$emoji,
+"png_sticker"=>new CurlFile($sticker)]),1);
+                 }
+             $count += 1;
+             }
+             return $result_list;
+        }
+        public function FileID2Link($fileid) {
+        $file = file_get_contents("https://api.telegram.org/bot" . $this->token . "/getFile?file_id=$fileid");
+        $decode = json_decode($file, 1);
+        $file_path = $decode['result']['file_path'];
+        return "https://api.telegram.org/file/bot" . $this->token . "/$file_path";
+    }
     }
     class TGX_Files {
         public function CreateFile($name, $value = null) {
@@ -414,7 +513,7 @@ php.net/manual/en/mysqli.installation.php
         public function SetTable($name) {
             $this->TableName = $name;
         }
-        public function CreateTable() {
+        public function CreateTable($CHARACTER="BINARY") {
             $name = $this->TableName;
             if ($name == null) {
                 $name = $this->AutoTableDB;
@@ -422,7 +521,7 @@ php.net/manual/en/mysqli.installation.php
             if ($name == null) {
                 CreateLogMonster("Can t Find Table Name in DBTable");
             }
-            $sql = "CREATE TABLE " . $this->mysql_user . "." . $name . " (IDC int NOT NULL AUTO_INCREMENT PRIMARY KEY) CHARACTER SET utf8";
+            $sql = "CREATE TABLE " . $this->mysql_user . "." . $name . " (IDC int NOT NULL AUTO_INCREMENT PRIMARY KEY) CHARACTER SET $CHARACTER";
             $query = mysqli_query($this->mysql, $sql);
             if ($query) {
                 return true;
@@ -701,5 +800,49 @@ $encryption_key=base64_decode($this->AES_PASS);
 list($encrypted_data,$iv)=explode('::',convert_uudecode(quoted_printable_decode(base64_decode($data))),2);
 
 return openssl_decrypt($encrypted_data,'aes-256-cbc',$encryption_key,0,$iv);
+    }
+}
+
+class TGX_Blockio{
+     public function __construct($key){
+        $this->token = $key;
+     }
+     public function GetBalance($address=null){
+if($address == null){
+        $api = file_get_contents("https://block.io/api/v2/get_balance/?api_key=".$this->token."&addresses=".$address);
+}else{
+        $api = file_get_contents("https://block.io/api/v2/get_balance/?api_key=".$this->token);
+}
+        $json = json_decode($api,1);
+        return $json['data']['available_balance'];
+     }
+
+     public function CreateNewAddress($label=null){
+if($label == null){
+    $api = file_get_contents("https://block.io/api/v2/get_new_address/?api_key=".$this->token);
+}else{
+    $api = file_get_contents("https://block.io/api/v2/get_new_address/?api_key=".$this->token."&label=".$label);
+}
+    $json = json_decode($api,1);
+    if($json['status'] == "success"){
+        return [$json['data']['address'],$json['data'][0]['label']];
+    }else{
+         return $json['data']['error_message'];
+    }
+     }
+     public function WithDarw($amount,$address,$from=null){
+
+if($from == null){
+    $api = file_get_contents("https://block.io/api/v2/withdraw_from_addresses/?api_key=".$this->token."&to_addresses=".$address."&amounts=".$amount);
+}else{
+    $api = file_get_contents("https://block.io/api/v2/withdraw_from_addresses/?api_key=".$this->token."&to_addresses=".$address."&amounts=".$amount."&from_addresses=".$from);
+}
+    $json = json_decode($api,1);
+    if($json['status'] == "success"){
+        return true;
+    }else{
+         return $json['data']['error_message'];
+    }
+
     }
 }
