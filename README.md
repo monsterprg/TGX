@@ -1,6 +1,9 @@
 # TGX (Free)
 Create Best Bot With TGX Library
 
+Version : 1.4X
+For See New Updates : https://t.me/TGX_TEAM/26
+
 Version : 1.3X
 
 What's news ? 💥
