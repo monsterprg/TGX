@@ -36,7 +36,7 @@ On the next page, you'll assign privileges for the user to the database. Check t
 <pre>$MonsterM->SetTable("table_name");</pre>
 
 <b>Create Table</b>
-<pre>$MonsterM->CreateTable();</pre>
+<pre>$MonsterM->CreateTable($format="binary");</pre>
 
 <b>Check Exist Table</b>
 <pre>$MonsterM->TableExists();</pre>
