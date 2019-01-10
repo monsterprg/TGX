@@ -80,7 +80,21 @@ $MonsterX->SendPhoto();
               ]]);
 </pre>
 
+<b> You can Set Files For create Sticker</b>
+<pre>$MonsterX->StickerPack($stickers=[]);</pre>
 
+<b> You can use the folder name if you can not find the file list </b>
+<pre>$MonsterX->StickerPackFolder($folderp,$emoji=[]);</pre>
+
+<b> Set the name sticker for link sticker </b>
+<pre>$MonsterX->StickerName("NAME");</pre>
+
+<b> you need Set the title sticker! use this </b>
+<pre>$MonsterX->StickerTitle($title);</pre>
+
+<b> you can change file id to url link (warning: url link have token)</b>
+<pre> $MonsterX->FileID2Link($fileid); </pre>
+  
 
 <b> If you do not like to open the links in your message before send, use this 👇 </b>
 <pre>$MonsterX->DisableWebPagePreview(true);</pre>
