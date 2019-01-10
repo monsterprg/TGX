@@ -24,8 +24,9 @@ echo NAMEBOT;
 //for name bot
 
 </pre>
-<b>- Added new function for delete message (DeleteMessage in TGX.md)
-
+<b>
+- Added new function for delete message (DeleteMessage in TGX.md)
+- Now you can create sticker pack (Check The TGX.md)
 
 
 Version : 1.3X
