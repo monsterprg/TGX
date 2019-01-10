@@ -2,7 +2,31 @@
 Create Best Bot With TGX Library
 
 Version : 1.4X
-For See New Updates : https://t.me/TGX_TEAM/26
+What's news ? 💥
+<b>now you can empty datas</b>
+<pre>
+
+$MonsterX->EmptyData();
+$MonsterX->EmptyCaption();
+$MonsterX->EmptyParseMode();
+$MonsterX->EmptyReplyMarkup();
+$MonsterX->EmptyReplyToMessage();
+</pre>
+Call this function to get this constant
+<pre>
+
+$MonsterX->info_bot();
+echo USERBOT;
+//for user bot
+echo IDBOT;
+//for id bot
+echo NAMEBOT;
+//for name bot
+
+</pre>
+<b>- Added new function for delete message (DeleteMessage in TGX.md)
+
+
 
 Version : 1.3X
 
