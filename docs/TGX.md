@@ -111,6 +111,7 @@ $MonsterX->SendVoice();
 $MonsterX->SendContact($first_name, $last_name = null); (SetData = phone_number)
 $MonsterX->IsJoinUser($channel);
 $MonsterX->ForwardMessage();
+$MonsterX->CreateSticker();
 </pre>
 
 <b>You can use this variable to get the message id from the last message send</b>
