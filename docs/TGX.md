@@ -89,6 +89,7 @@ $MonsterX->SendPhoto();
 <pre>
 $MonsterX->SendMessage();
 $MonsterX->EditMessage($inline=false);
+$MonsterX->DeleteMessage();
 $MonsterX->SendDocument();
 $MonsterX->SendSticker();
 $MonsterX->SendVideo($width = null, $height = null);
