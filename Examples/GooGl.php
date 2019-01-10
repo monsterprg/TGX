@@ -2,7 +2,7 @@
 
 include "TGX.php";
 
-$MonsterX = new TGX('TOKEN_HERE',true);
+$MonsterX = new TGX('TOKEN_HERE');
 
 $MonsterP = new TGX_plugins();
 
